@@ -44,7 +44,7 @@ fin addon install artisan
 # Custom 
 
 rm README.md
-mv "web/{.,} .
+mv web/{.,} .
 fin config set DB_IMAGE='docksal/mariadb:10.11-1.4'
 fin project reset db
 
