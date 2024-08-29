@@ -45,8 +45,6 @@ fin addon install artisan
 
 rm README.md
 mv web/{.,} .
-fin config set DB_IMAGE='docksal/mariadb:10.11-1.4'
-fin project reset db
 
 echo "------------------------------------"
 echo -e "${green}Installation complete.${NC}"
