@@ -41,6 +41,14 @@ fin exec sed -i 's/DB_PASSWORD=/DB_PASSWORD=user/g' "${LARAVEL_ROOT}/.env"
 echo "Installing artisan addon..."
 fin addon install artisan
 
+# Custom 
+
+rm "$PROJECT_ROOT"/README.md
+mv "$PROJECT_ROOT/$LARAVEL_ROOT"/{.,} "$PROJECT_ROOT"
+cd "$PROJECT_ROOT"
+fin config set DB_IMAGE='docksal/mariadb:10.11-1.4'
+fin project reset db
+
 echo "------------------------------------"
 echo -e "${green}Installation complete.${NC}"
 echo -e "  URL: ${yellow}http://$VIRTUAL_HOST${NC}"
